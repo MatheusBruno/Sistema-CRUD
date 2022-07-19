@@ -1,0 +1,33 @@
+{
+  "login": [],
+  "register": [
+    {
+      "id": 1,
+      "email": "admin",
+      "senha": "admin",
+      "nome": "admin",
+      "cpf": "xxxx"
+    },
+    {
+      "id": 2,
+      "email": "matheusdev@gmail.com",
+      "senha": "JazzCoffee",
+      "nome": "Matheus Bruno Silveira",
+      "cpf": "10001000101"
+    },
+    {
+      "id": 3,
+      "email": "Paola@gmail.com",
+      "senha": "321",
+      "nome": "Paola",
+      "cpf": "9854752225"
+    },
+    {
+      "id": 4,
+      "email": "OpenHouse@gmail.com",
+      "senha": "857",
+      "nome": "Cervejaria Open House",
+      "cpf": "87456284556"
+    }
+  ]
+}

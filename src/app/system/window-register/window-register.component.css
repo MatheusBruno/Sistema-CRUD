@@ -1,0 +1,30 @@
+.div-first{
+    border-bottom: 2px solid rgb(31, 31, 31);
+    display: flex;
+    justify-content: space-between;
+}
+.div-dice{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.div-dice p{
+    margin: 5px;
+    font-size: 1.5em;
+}
+
+.div-button{
+    background-color: bisque;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.div-button button{
+    margin-top: 2px;
+}

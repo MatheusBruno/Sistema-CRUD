@@ -1,0 +1,12 @@
+<div class="div-first" *ngFor='let registerclient of registerClient'>
+    <div class="div-dice">
+        <p>Nome: {{registerclient.nome}}</p>
+        <p>CPF: {{registerclient.cpf}}</p>
+        <p>Email: {{registerclient.email}}</p>
+        <p>Senha: {{registerclient.senha}}</p>
+    </div>
+    <div class="div-button">
+        <button (click)="submitIdEdit(registerclient.id)">Editar</button>
+        <button (click)="deleteDice(registerclient.id)">Deletar</button>
+    </div>
+</div>

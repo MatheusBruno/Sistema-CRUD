@@ -1,0 +1,8 @@
+<div class="container-form" *ngIf="verificationlogin">
+    <app-form-login (enviaDados)="verificationJoinLogin($event)"></app-form-login>
+    <button class="buttonghost" (click)="verificabotao()"> Cadastrar </button>
+</div>
+
+<div class="container-form" *ngIf="!verificationlogin">
+    <app-form-register [btntext]="btnRegister" (onSubmit)="createItem($event)"></app-form-register>
+</div>

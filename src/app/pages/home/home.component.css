@@ -1,0 +1,24 @@
+div{
+    height: 900px;
+    border-top: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid black;
+}
+
+span{
+    color: #175f00;
+    font-weight: bold;
+}
+
+p:nth-child(1){
+    font-size: 3em;
+}
+
+@media (max-width: 1360px){
+    div{
+        height: auto;
+    }
+}

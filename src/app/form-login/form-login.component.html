@@ -1,0 +1,24 @@
+<div class="fundo">
+
+    <form (ngSubmit)="submit()" [formGroup]="dadosForm" #formDir="ngForm">
+        <div>
+            <label for="">Email</label>
+            <br>
+            <input type="email" formControlName="email" required>
+        </div>
+    
+        <div>
+            <label for="">Senha</label>
+            <br>
+            <input type="text" formControlName="senha" required>
+        </div>
+
+        <a routerLink="/recoveryaccount">Recuperar Senha</a>
+    
+        <div>
+            <input type="submit" value="Confirmar">
+        </div>
+
+    </form>
+
+</div>

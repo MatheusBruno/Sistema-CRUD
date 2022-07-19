@@ -1,0 +1,44 @@
+<div class="fundo">
+
+    <form (ngSubmit)="submit()" [formGroup]="formRegister" #formDir="ngForm" >
+        
+        <input type="hidden" formControlName="id">
+
+        <div>
+            <label for="">Email</label>
+            <br>
+            <input type="text" placeholder="Email" formControlName="email" required >
+        </div>
+        <div class="errorform" *ngIf="email.invalid && formDir.submitted">
+            <p>Coloque um Email!</p>
+        </div>
+    
+        <div>
+            <label for="">Senha</label>
+            <br>
+            <input type="text" placeholder="Senha"  formControlName="senha">
+        </div>
+    
+        <div>
+            <label for="">Nome Completo</label>
+            <br>
+            <input type="text" placeholder="Nome" formControlName="nome" required>
+        </div>
+        <div class="errorform" *ngIf="nome.invalid && formDir.submitted">
+            <p>Coloque o Nome Completo!</p>
+        </div>
+    
+        <div>
+            <label for="">CPF</label>
+            <br>
+            <input type="text" placeholder="CPF" formControlName="cpf" required>
+        </div>
+        <div class="errorform" *ngIf="cpf.invalid && formDir.submitted">
+            <p>Coloque o CPF!</p>
+        </div>
+    
+        <div>
+            <input type="submit" value="{{btntext}}">
+        </div>
+    </form>
+</div>

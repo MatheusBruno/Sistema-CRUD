@@ -1,0 +1,47 @@
+.header{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header > a{
+    width: 50%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.header > a > div > img{
+    width: 120px;
+    transition: .4s;
+}
+
+.header > a > div > img:hover{
+    width: 110px;
+}
+
+nav{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav > ul {
+    display: flex;
+}
+
+nav > ul > li{
+    margin-left: 20px;
+    list-style: none;
+}
+
+a{
+    color: rgba(0, 0, 0, 0.758);
+    text-decoration: none;
+    transition: .4s;
+}
+a:hover{
+    color: #dec129;
+}

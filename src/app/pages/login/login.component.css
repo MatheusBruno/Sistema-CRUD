@@ -1,0 +1,25 @@
+.buttonghost{
+    position: relative;
+    bottom: 365px;
+    left: 43.4%;
+}
+
+.buttonghost:hover{
+    cursor: pointer;
+}
+
+@media (max-width: 1360px){
+    .buttonghost{
+        position: relative;
+        bottom: 210px;
+        left: 40.7%;
+    }
+}
+
+@media (max-width: 500px){
+    .buttonghost{
+        position: relative;
+        bottom: 210px;
+        left: 23.4%;
+    }
+}
