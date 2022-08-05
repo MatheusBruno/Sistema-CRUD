@@ -2,7 +2,8 @@ import { Component, EventEmitter, OnInit, Output, Input } from '@angular/core';
 import { FormControl, FormControlName, FormGroup, Validators } from '@angular/forms';
 import { Register } from 'src/Register';
 import { RegisterFormService } from '../service/register-form.service';
-import { ActivatedRoute } from '@angular/router'
+import { LoginFormService } from '../service/login-form.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-form-register',
@@ -15,28 +16,48 @@ export class FormRegisterComponent implements OnInit {
 
   @Input() btntext = '';
   @Input() diceRegisterEdit! : Register;
-  diceDeliver : Register[] = [];
+  @Input() backpage! : number;
+  diceUserRegister : Register[] = [];
+
+  txtAlert : boolean = false;
+
+  nivelsystem = [
+    {nivel: 0, name: 'User'},
+    {nivel: 1, name: 'Admin'}
+  ];
 
   formRegister! : FormGroup;
 
-  constructor() {
+  constructor( private serverRegister : RegisterFormService, private serverLogin : LoginFormService, private routa : Router ) {
+    this.serverRegister.getDices().subscribe((dice) => this.diceUserRegister = dice);
   }
 
   ngOnInit(): void {
-    this.formEdit();
-  }
-
-  formEdit(){
-    /* OBS: Para FormGroup reconhecer objeto Register é necessario que a
-    tela primaria(Component Pai ou que recebe os dados) tenha um chamada do atributo que envia os dados
-    para que assim seja feito a chamada no atributo filho(@Input)*/
     this.formRegister = new FormGroup({
       id: new FormControl(''),
       email: new FormControl(this.diceRegisterEdit? this.diceRegisterEdit.email : '',Validators.required),
       senha: new FormControl(this.diceRegisterEdit? this.diceRegisterEdit.senha : ''),
       nome: new FormControl(this.diceRegisterEdit? this.diceRegisterEdit.nome :'',Validators.required),
-      cpf: new FormControl(this.diceRegisterEdit? this.diceRegisterEdit.cpf :'',Validators.required)
+      cpf: new FormControl(this.diceRegisterEdit? this.diceRegisterEdit.cpf :'',Validators.required),
+      nivel: new FormControl(this.diceRegisterEdit? this.diceRegisterEdit.nivel : this.nivelsystem[0])
     });
+  }
+
+  verificationEdit(){
+    if(this.serverLogin.diceUserLogin.nivel?.nivel == 1){
+      return true;
+    }else{
+      return false;
+    }
+  }
+      
+  backPage(){
+    if(this.backpage == 1){
+      this.routa.navigate(['/system/homesystem']);
+    }
+    if(this.backpage == 2){
+      this.routa.navigate(['/system/windowregister']);
+    }
   }
 
   get email(){
@@ -52,15 +73,41 @@ export class FormRegisterComponent implements OnInit {
   }
 
   submit(){
+
+    let veri : boolean = true;
+
+    if(this.diceRegisterEdit){
+
+    }else{
+      if(this.formRegister.get('cpf')?.value){
+        this.diceUserRegister.forEach((dice) => {
+          if(this.formRegister.get('cpf')?.value == dice.cpf){
+            console.log('Email Repetido');
+            this.txtAlert = true;
+            return veri = false;
+          }else{
+            return;
+          }
+        })
+      }
+    }
+
     
 
     if(this.formRegister.invalid){
-      console.log('Não Salvou!');
+      console.log('Não funcio')
+      this.txtAlert = false;
+      veri = false;
       return;
     }
 
-    this.onSubmit.emit(this.formRegister.value);
-    console.log('Salvou');
+    if(veri!){
+      this.onSubmit.emit(this.formRegister.value);
+      console.log('Salvou');
+    }else{
+      return;
+    }
+    
 
   }
 

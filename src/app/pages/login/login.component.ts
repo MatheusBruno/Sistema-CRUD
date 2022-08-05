@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
   
   obterdados = '';
 
-  registerObj : Register[] = [];
+  registerObj! : Register;
   objLoginJson : Register[] = [];
   btnRegister = 'Registar';
 
@@ -28,7 +28,8 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    
+    this.serverLogin.submitlogin = false;
+    this.serverLogin.diceUserLogin = this.registerObj;
   }
 
   seachdb(){
@@ -40,19 +41,15 @@ export class LoginComponent implements OnInit {
   }
 
   verificationJoinLogin(register : Register){
-    for (let index = 0; index <= this.objLoginJson.length; index++) {
-      const objEmail = this.objLoginJson[index].email.toLowerCase();
-      const objSenha = this.objLoginJson[index].senha.toLowerCase();
-      const objNome = this.objLoginJson[index].nome;
-
-      if(register.email.toLowerCase() == objEmail && register.senha.toLowerCase() == objSenha){
-        alert('Seja Bem Vindo ' + objNome + '!');
-        this.url.navigate(['/system/homesystem']);
+    this.objLoginJson.forEach(dice => {
+      if(register.email.toLowerCase() == dice.email.toLowerCase() && register.senha.toLowerCase() == dice.senha.toLowerCase()){
+        alert('Seja Bem Vindo ' + dice.nome + '!');
+        this.url.navigate([`/system/homesystem`]);
+        this.serverLogin.diceUserLogin = dice;
+        this.serverLogin.submitlogin = true;
         console.log('Entrou');
-        break;
       }
-
-    }
+    });
   }
 
   async createItem(register : Register){

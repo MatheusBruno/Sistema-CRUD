@@ -16,6 +16,9 @@ import { RecoveryAccountComponent } from './recovery-account/recovery-account.co
 import { HomesystemComponent } from './system/homesystem/homesystem.component';
 import { WindowRegisterComponent } from './system/window-register/window-register.component';
 import { PageditComponent } from './system/pagedit/pagedit.component';
+import { AcessRegisterIndividualComponent } from './system/acess-register-individual/acess-register-individual.component';
+import { Authlogin } from './authlogin/authlogin';
+import { AuthDeactivate } from './authlogin/auth-deactivate';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,8 @@ import { PageditComponent } from './system/pagedit/pagedit.component';
     RecoveryAccountComponent,
     HomesystemComponent,
     WindowRegisterComponent,
-    PageditComponent
+    PageditComponent,
+    AcessRegisterIndividualComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +42,7 @@ import { PageditComponent } from './system/pagedit/pagedit.component';
     FormsModule,
     ReactiveFormsModule, 
   ],
-  providers: [],
+  providers: [Authlogin],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

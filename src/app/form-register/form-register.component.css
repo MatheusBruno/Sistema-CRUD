@@ -16,3 +16,11 @@ form{
     text-align: left;
     color: red;
 }
+
+select{
+    width: 254px ;
+}
+
+.buttonback{
+    margin-top: 3px;
+}

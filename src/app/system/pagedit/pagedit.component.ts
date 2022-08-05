@@ -12,6 +12,7 @@ export class PageditComponent implements OnInit {
 
   diceRegister! : Register;
   btnedit = 'Editar';
+  page : number = 2;
 
   constructor( private serverRegister : RegisterFormService, private linkUrl : ActivatedRoute, private url : Router ) { 
     

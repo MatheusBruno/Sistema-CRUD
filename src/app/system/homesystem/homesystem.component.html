@@ -1,11 +1,20 @@
-<div>
-    <div class="containers">
+<div class="backgroundhomesystem">
+    <div class="diceUser">
+        <h1>Bem Vindo</h1>
+        <div class="diceUserInformation">
+            <p>Nome: {{diceLogin.nome}}</p>
+            <p>CPF: {{diceLogin.cpf}}</p>
+            <p>Nivel: {{diceLogin.nivel?.name}}</p>
+        </div>
+    </div>
+
+    <div class="containers" *ngIf="verificartion()">
         <h1>Registros dos Cadastros</h1>
         <a routerLink="/system/windowregister">Ver todos</a>
     </div>
     <div class="containers">
-        <h1>Indisponível no momento</h1>
-        <a routerLink="/system/homesystem">x</a>
+        <h1>Edição de Cadastro Individual</h1>
+        <a routerLink="/system/pageditindividual/{{idUrl}}">Editar</a>
     </div>
     <div class="containers">
         <h1>Indisponível no momento</h1>

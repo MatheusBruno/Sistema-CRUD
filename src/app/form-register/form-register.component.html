@@ -36,9 +36,23 @@
         <div class="errorform" *ngIf="cpf.invalid && formDir.submitted">
             <p>Coloque o CPF!</p>
         </div>
+        <div class="errorform" *ngIf="txtAlert && cpf.valid">
+            <p>CPF já Cadastrado</p>
+        </div>
+
+        <div *ngIf="verificationEdit()">
+            <label>Nivel</label>
+            <br>
+            <select formControlName="nivel">
+                <option *ngFor="let nivel of nivelsystem" [ngValue]="nivel">{{nivel.name}}</option>
+            </select>
+        </div>
     
         <div>
             <input type="submit" value="{{btntext}}">
         </div>
+
+        <button class="buttonback" *ngIf="diceUserRegister" (click)="backPage()">Back</button>
+
     </form>
 </div>

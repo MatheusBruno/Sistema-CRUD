@@ -1,0 +1,6 @@
+<div *ngIf="diceIndividual">
+    <input type="hidden" value="{{diceIndividual.nome}}">
+    <app-form-register [diceRegisterEdit]="diceIndividual" [btntext]="btnText" [backpage]="page" (onSubmit)="setDice($event)" ></app-form-register>
+</div>
+
+

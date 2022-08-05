@@ -6,28 +6,55 @@
       "email": "admin",
       "senha": "admin",
       "nome": "admin",
-      "cpf": "xxxx"
+      "cpf": "xxxx",
+      "nivel": {
+        "nivel": 1,
+        "name": "Admin"
+      }
     },
     {
       "id": 2,
       "email": "matheusdev@gmail.com",
-      "senha": "JazzCoffee",
+      "senha": "123",
       "nome": "Matheus Bruno Silveira",
-      "cpf": "10001000101"
-    },
-    {
-      "id": 3,
-      "email": "Paola@gmail.com",
-      "senha": "321",
-      "nome": "Paola",
-      "cpf": "9854752225"
+      "cpf": "10001000101",
+      "nivel": {
+        "nivel": 0,
+        "name": "User"
+      }
     },
     {
       "id": 4,
       "email": "OpenHouse@gmail.com",
-      "senha": "857",
+      "senha": "naosalva",
       "nome": "Cervejaria Open House",
-      "cpf": "87456284556"
+      "cpf": "87456284556",
+      "nivel": {
+        "nivel": 0,
+        "name": "User"
+      }
+    },
+    {
+      "id": 5,
+      "email": "Matheusdev@gmail.com",
+      "senha": "123",
+      "nome": "Matheus Bruno Silveira",
+      "cpf": "897558152033",
+      "nivel": {
+        "nivel": 0,
+        "name": "User"
+      }
+    },
+    {
+      "id": 6,
+      "email": "kingofsecrets@gmail.com",
+      "senha": "123",
+      "nome": "Raymond Reddington",
+      "cpf": "99988877766",
+      "nivel": {
+        "nivel": 1,
+        "name": "Admin"
+      }
     }
   ]
 }
