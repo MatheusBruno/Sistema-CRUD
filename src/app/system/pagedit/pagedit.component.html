@@ -1,6 +1,6 @@
 <div>
     <p>Edição do Cadastro: {{diceRegister.nome}}</p> <!-- Chamada do Atributo aqui no HTML -->
-    <app-form-register [btntext]="btnedit" [diceRegisterEdit]="diceRegister" (onSubmit)="updateRegister($event)"></app-form-register>
+    <app-form-register [btntext]="btnedit" [diceRegisterEdit]="diceRegister" [backpage]="page" (onSubmit)="updateRegister($event)"></app-form-register>
     <!-- OBS: Para o diceRegisterEdit(@Input()) receba os dados do diceRegister(Atributo) é necessario que
     exista uma chamada do atributo aqui no HTML -->>
 </div>

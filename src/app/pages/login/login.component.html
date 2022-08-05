@@ -1,5 +1,5 @@
 <div class="container-form" *ngIf="verificationlogin">
-    <app-form-login (enviaDados)="verificationJoinLogin($event)"></app-form-login>
+    <app-form-login [objVerificationEmail]="objLoginJson" (enviaDados)="verificationJoinLogin($event)"></app-form-login>
     <button class="buttonghost" (click)="verificabotao()"> Cadastrar </button>
 </div>
 

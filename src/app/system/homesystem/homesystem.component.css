@@ -2,15 +2,46 @@ div{
     height: 900px;
     border-top: 2px solid black;
     border-bottom: 2px solid black;
+    background-color: #4f4f4f94;
 }
 
 .containers{
     display: flex;
     width: 100%;
-    height: 19%;
+    height: auto;
     align-items: center;
     justify-content: space-between;
     margin-top: 2px;
+}
+
+.diceUser{
+    display: flex;
+    width: 100%;
+    height: auto;
+    justify-content: space-between;
+    border-top: none ;
+    border-bottom: none ;
+}
+
+.diceUser > h1{
+    margin-left: 85px;
+    color: #ff1212;
+}
+
+.diceUserInformation{
+    display: flex;
+    width: 50%;
+    height: auto;
+    align-items: flex-end;
+    padding-right: 100px;
+    flex-direction: column;
+    border-top: none ;
+    border-bottom: none ;
+}
+
+.diceUserInformation > p{
+    margin: 1.5px 0px;
+    font-size: 1.3rem;
 }
 
 .containers h1{

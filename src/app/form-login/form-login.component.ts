@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Register } from 'src/Register';
 
@@ -10,6 +10,8 @@ import { Register } from 'src/Register';
 export class FormLoginComponent implements OnInit {
 
   @Output() enviaDados = new EventEmitter<Register>();
+
+  @Input() objVerificationEmail : Register[] = [];
 
   dadosForm! : FormGroup;
 
@@ -31,6 +33,7 @@ export class FormLoginComponent implements OnInit {
   }
 
   submit(){
+
     if(this.verificationEmail?.invalid && this.verificationSenha?.invalid){
         alert('Informe os dados!');
         return;
@@ -38,5 +41,6 @@ export class FormLoginComponent implements OnInit {
         console.log('Primeiro Estagio de Verificação');
         this.enviaDados.emit(this.dadosForm.value);
       }
+
   }
 }

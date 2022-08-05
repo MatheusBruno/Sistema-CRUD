@@ -4,6 +4,7 @@
         <p>CPF: {{registerclient.cpf}}</p>
         <p>Email: {{registerclient.email}}</p>
         <p>Senha: {{registerclient.senha}}</p>
+        <p>Nivel: {{registerclient.nivel?.name}}</p>
     </div>
     <div class="div-button">
         <button (click)="submitIdEdit(registerclient.id)">Editar</button>

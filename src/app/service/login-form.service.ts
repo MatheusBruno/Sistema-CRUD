@@ -9,8 +9,10 @@ import { Observable } from 'rxjs';
 export class LoginFormService {
 
   baseUrl = 'http://localhost:3000/register';
+  submitlogin : boolean = false;
+  diceUserLogin! : Register;
 
-  constructor(private http : HttpClient) { }
+  constructor(private http : HttpClient) {}
 
   acessAccountLogin(): Observable<Register[]>{
     return this.http.get<Register[]>(this.baseUrl);
